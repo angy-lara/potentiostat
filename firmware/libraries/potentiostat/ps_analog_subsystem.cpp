@@ -35,6 +35,7 @@ namespace ps
         pinMode(TIA_GAIN_A1,OUTPUT);
         pinMode(REF_GAIN_A0,OUTPUT);
         pinMode(REF_GAIN_A1,OUTPUT);
+        pinMode(DIO_EXP_PIN,INPUT);
 #else
 #   error "HARDWARE_VERSION must be specified"
 #endif
