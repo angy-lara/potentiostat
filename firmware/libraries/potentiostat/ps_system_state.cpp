@@ -64,6 +64,7 @@ namespace ps
         commandTable_.registerMethod(CommandKey,   GetMuxWrkElectConnCmd,   &SystemState::onCommandGetMuxWrkElectConn); 
         commandTable_.registerMethod(CommandKey,   DisconnAllMuxElectCmd,   &SystemState::onCommandDisconnAllMuxElect);
 #if defined HARDWARE_VERSION_0P2 
+        commandTable_.registerMethod(CommandKey,   GetDIOExpCmd,            &SystemState::onCommandGetDIOExp);
         commandTable_.registerMethod(CommandKey,   SetRefElectConnCmd,      &SystemState::onCommandSetRefElectConn);
         commandTable_.registerMethod(CommandKey,   GetRefElectConnCmd,      &SystemState::onCommandGetRefElectConn);
         commandTable_.registerMethod(CommandKey,   SetCtrElectConnCmd,      &SystemState::onCommandSetCtrElectConn);
@@ -204,6 +205,13 @@ namespace ps
         return status;
     }
 
+    ReturnStatus SystemState::onCommandGetDIOExp(JsonObject &jsonMsg, JsonObject &jsonDat)
+    {
+        ReturnStatus status;
+        float DIOExp = analogSubsystem_.getDIOExp();
+        jsonDat.set(DIOExpKey,DIOExp);
+        return status;
+    }
 
     ReturnStatus SystemState::onCommandSetTestParam(JsonObject &jsonMsg, JsonObject &jsonDat)
     {

@@ -69,6 +69,7 @@ namespace ps
             ReturnStatus onCommandGetMuxWrkElectConn(JsonObject &jsonMsg, JsonObject &jsonDat);
             ReturnStatus onCommandDisconnAllMuxElect(JsonObject &jsonMsg, JsonObject &jsonDat);
 #if defined HARDWARE_VERSION_0P2
+            ReturnStatus onCommandGetDIOExp(JsonObject &jsonMsg, JsonObject &jsonDat);
             ReturnStatus onCommandSetRefElectConn(JsonObject &jsonMsg, JsonObject &jsonDat);
             ReturnStatus onCommandGetRefElectConn(JsonObject &jsonMsg, JsonObject &jsonDat);
             ReturnStatus onCommandSetCtrElectConn(JsonObject &jsonMsg, JsonObject &jsonDat);
