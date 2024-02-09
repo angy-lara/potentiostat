@@ -101,6 +101,12 @@ namespace ps
         return SignAdc*refElectVoltRange_.intToValue(getRefElectAin());
     }
 
+    float AnalogSubsystem::getDIOExp() const   
+    {
+        // Get measurement of reference electrode voltage 
+        return refElectVoltRange_.intToValue(getDIOExpAin());
+    }
+
 
     void AnalogSubsystem::setVoltRange(VoltRangeDac range)
     {
@@ -634,6 +640,12 @@ namespace ps
     {
         // Read analog input associated with the refernce electrode
         return analogRead(REF_ELECT_UNI_PIN);
+    }
+
+    uint16_t AnalogSubsystem::getDIOExpAin() const
+    {
+        // Read analog input associated with the refernce electrode
+        return analogRead(DIO_EXP_PIN);
     }
 
 #if defined HARDWARE_VERSION_0P2
