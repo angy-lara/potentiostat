@@ -104,7 +104,8 @@ namespace ps
     float AnalogSubsystem::getDIOExp() const   
     {
         // Get measurement of reference electrode voltage 
-        return refElectVoltRange_.intToValue(getDIOExpAin());
+        //return refElectVoltRange_.intToValue(getDIOExpAin());
+        return getDIOExpAin();
     }
 
 
@@ -645,7 +646,8 @@ namespace ps
     uint16_t AnalogSubsystem::getDIOExpAin() const
     {
         // Read analog input associated with the refernce electrode
-        return analogRead(DIO_EXP_PIN);
+        //return analogRead(DIO_EXP_PIN);
+        return digitalRead(DIO_EXP_PIN);
     }
 
 #if defined HARDWARE_VERSION_0P2
