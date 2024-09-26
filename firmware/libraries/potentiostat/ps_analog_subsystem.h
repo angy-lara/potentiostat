@@ -45,7 +45,9 @@ namespace ps
             float getVolt() const;     
             
             float getCurr() const;           
-            float getRefElectVolt() const;   
+            float getRefElectVolt() const; 
+
+            float getDIOExp() const;  
 
             void setVoltRange(VoltRangeDac range);  
             VoltRangeDac getVoltRange() const;      
@@ -89,6 +91,7 @@ namespace ps
 
             uint16_t getTransAmpAin() const;  
             uint16_t getRefElectAin() const;  
+            uint16_t getDIOExpAin() const;
 
             VoltRangeAdc refElectVoltRange_;
 #if defined HARDWARE_VERSION_0P2

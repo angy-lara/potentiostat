@@ -36,6 +36,7 @@ namespace ps
     const int SW_CTR_ELECT = 11;
     const int SW_REF_ELECT = 12;
     const int SW_WRK_ELECT = 13;
+    const int DIO_EXP_PIN = 7;
 #else
     #error "HARDWARE_VERSION must be specified"
 #endif 

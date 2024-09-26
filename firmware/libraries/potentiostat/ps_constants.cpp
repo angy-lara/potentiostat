@@ -31,6 +31,7 @@ namespace ps
     const String CurrKey = String("i");
     const String ChanKey = String("n");
     const String RefVoltKey = String("r");
+    const String DIOExpKey = String("d");
     const String ParamKey = String("param");
     const String VoltRangeKey = String("voltRange");
     const String CurrRangeKey = String("currRange");
@@ -68,6 +69,7 @@ namespace ps
     const String SetVoltCmd = String("setVolt");
     const String GetCurrCmd = String("getCurr");
     const String GetRefVoltCmd = String("getRefVolt");
+    const String getDIOExpCmd = String("getDIOExp");
     const String SetParamCmd = String("setParam");
     const String GetParamCmd = String("getParam");
     const String SetVoltRangeCmd = String("setVoltRange");

@@ -34,6 +34,7 @@ VoltKey = 'v'
 CurrKey = 'i'
 ChanKey = 'n'
 RefVoltKey = 'r'
+DIOExpKey = 'd'
 VoltRangeKey = 'voltRange'
 CurrRangeKey = 'currRange'
 DeviceIdKey = 'deviceId'
@@ -55,6 +56,7 @@ GetVoltCmd = 'getVolt'
 SetVoltCmd = 'setVolt'
 GetCurrCmd = 'getCurr'
 GetRefVoltCmd = 'getRefVolt'
+GetDIOExpCmd = 'getDIOExp'
 GetParamCmd = 'getParam'
 SetParamCmd = 'setParam'
 GetVoltRangeCmd = 'getVoltRange'
@@ -274,6 +276,18 @@ class Potentiostat(serial.Serial):
         volt = msg_dict[ResponseKey][RefVoltKey]
         return volt
 
+    def get_dio_exp(self):
+        """Gets an immediate measurement of the potential between the working
+        and reference electrode. 
+
+        Returns:
+            float: potential between working and reference electrode, units (V)
+
+        """
+        cmd_dict = {CommandKey: GetDIOExpCmd}
+        msg_dict = self.send_cmd(cmd_dict)
+        dio = msg_dict[ResponseKey][DIOExpKey]
+        return dio
 
     def get_param(self,testname):
         """Returns the current values of the parameters for the specified
